@@ -1,8 +1,8 @@
-En Fazla Açýlacak Ýþlem: 5
+En Fazla Açýlacak Ýþlem: 2
 Stabil Para: USDT
 Bütçe: 100
 Ýþlem Çifti: BTC/USDT
 Baþlangýç Tarihi: 2024-09-30
-Bitiþ Tarihi: 2024-10-26
-Strateji: Mean Reversion
-Zaman Biçimi: 5m
+Bitiþ Tarihi: 2024-11-01
+Strateji: Momentum
+Zaman Biçimi: 1m

@@ -45,6 +45,15 @@
          .form-section {
             margin-bottom: 20px;
          }
+         .result-section {
+            background-color: #e9f7ef;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+         }
+         .result-section h3 {
+            color: #28a745;
+         }
       </style>
    </head>
    <body>
@@ -88,7 +97,7 @@
       <!-- Backtest Formu -->
       <div class="container backtest-container">
          <h2 class="text-center">Backtest Strateji Ekranı</h2>
-         <form method="POST" action="{{ url_for('backtest_result') }}">
+         <form method="POST" action="{{ url_for('backtest') }}">
             <!-- En fazla açılacak işlem -->
             <div class="form-section row">
                <div class="col-md-6 form-group">
@@ -169,6 +178,21 @@
                <button type="submit" class="submit-btn">Backtest Başlat</button>
             </div>
          </form>
+
+         <!-- İşlenen verilerin gösterildiği sonuç kısmı -->
+         {% if result %}
+         <div class="result-section">
+            <h3>İşlenmiş Backtest Verileri</h3>
+            <p>En Fazla Açılacak İşlem: {{ result['max_transactions'] }}</p>
+            <p>Stabil Para: {{ result['stable_coin'] }}</p>
+            <p>Bütçe: {{ result['budget'] }}</p>
+            <p>İşlem Çifti: {{ result['trade_pair'] }}</p>
+            <p>Başlangıç Tarihi: {{ result['start_date'] }}</p>
+            <p>Bitiş Tarihi: {{ result['end_date'] }}</p>
+            <p>Strateji: {{ result['strategy'] }}</p>
+            <p>Zaman Biçimi: {{ result['time_frame'] }}</p>
+         </div>
+         {% endif %}
       </div>
 
       <footer>
