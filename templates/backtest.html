@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="tr">
+   <head>
+      <meta charset="UTF-8">
+      <title>Backtest Strateji Ekranı - AsiFin</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+      <style>
+         /* Genel sayfa stili */
+         body {
+            background-color: #f4f4f9;
+         }
+         .backtest-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+         }
+         h2 {
+            color: #333;
+            margin-bottom: 30px;
+         }
+         .form-group label {
+            font-weight: 500;
+            color: #555;
+         }
+         .form-control {
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            padding: 10px;
+         }
+         .submit-btn {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+         }
+         .submit-btn:hover {
+            background-color: #0056b3;
+         }
+         .form-section {
+            margin-bottom: 20px;
+         }
+      </style>
+   </head>
+   <body>
+      <header>
+         <div class="header">
+            <div class="container">
+               <div class="row">
+                  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 logo_section">
+                     <div class="full">
+                        <div class="center-desk">
+                           <div class="logo">
+                              <a href="{{ url_for('index') }}">
+                                 <img src="{{ url_for('static', filename='images/matiricie.png') }}" alt="Logo" style="max-width: 250px; max-height: 100px;" />
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                     <nav class="navigation navbar navbar-expand-md navbar-dark">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                           <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarsExample04">
+                           <ul class="navbar-nav mr-auto">
+                              <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Anasayfa</a></li>
+                              <li class="nav-item"><a class="nav-link" href="{{ url_for('hakkimizda') }}">Hakkımızda</a></li>
+                              <li class="nav-item"><a class="nav-link" href="{{ url_for('hizmetler') }}">Hizmetler</a></li>
+                              <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}#contact">İletişim</a></li>
+                              <li class="nav-item"><a class="nav-link" href="signup.html">Kayıt Ol</a></li>
+                              <li class="nav-item"><a class="nav-link" href="login.html">Giriş Yap</a></li>
+                           </ul>
+                        </div>
+                     </nav>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </header>
+
+      <!-- Backtest Formu -->
+      <div class="container backtest-container">
+         <h2 class="text-center">Backtest Strateji Ekranı</h2>
+         <form method="POST" action="{{ url_for('backtest_result') }}">
+            <!-- En fazla açılacak işlem -->
+            <div class="form-section row">
+               <div class="col-md-6 form-group">
+                  <label for="max_transactions">En Fazla Açılacak İşlem</label>
+                  <input type="number" id="max_transactions" name="max_transactions" class="form-control" placeholder="Örn: 10" required>
+               </div>
+
+               <!-- Stabil Para -->
+               <div class="col-md-6 form-group">
+                  <label for="stable_coin">Stabil Para</label>
+                  <select id="stable_coin" name="stable_coin" class="form-control" required>
+                     <option value="USDT">USDT</option>
+                     <option value="USDC">USDC</option>
+                     <option value="BUSD">BUSD</option>
+                  </select>
+               </div>
+            </div>
+
+            <!-- Bütçe -->
+            <div class="form-section row">
+               <div class="col-md-6 form-group">
+                  <label for="budget">Bütçe</label>
+                  <input type="number" id="budget" name="budget" class="form-control" placeholder="Örn: 1000" required>
+               </div>
+
+               <!-- İşlem Çifti -->
+               <div class="col-md-6 form-group">
+                  <label for="trade_pair">İşlem Çifti</label>
+                  <select id="trade_pair" name="trade_pair" class="form-control" required>
+                     <option value="BTC/USDT">BTC/USDT</option>
+                     <option value="ETH/USDT">ETH/USDT</option>
+                     <option value="BNB/USDT">BNB/USDT</option>
+                  </select>
+               </div>
+            </div>
+
+            <!-- Tarih Aralığı -->
+            <div class="form-section row">
+               <div class="col-md-6 form-group">
+                  <label for="start_date">Başlangıç Tarihi</label>
+                  <input type="date" id="start_date" name="start_date" class="form-control" required>
+               </div>
+
+               <div class="col-md-6 form-group">
+                  <label for="end_date">Bitiş Tarihi</label>
+                  <input type="date" id="end_date" name="end_date" class="form-control" required>
+               </div>
+            </div>
+
+            <!-- Strateji -->
+            <div class="form-section row">
+               <div class="col-md-12 form-group">
+                  <label for="strategy">Strateji</label>
+                  <select id="strategy" name="strategy" class="form-control" required>
+                     <option value="Momentum">Momentum</option>
+                     <option value="Mean Reversion">Mean Reversion</option>
+                     <option value="Breakout">Breakout</option>
+                  </select>
+               </div>
+            </div>
+
+            <!-- Zaman Biçimi -->
+            <div class="form-section row">
+               <div class="col-md-12 form-group">
+                  <label for="time_frame">Zaman Biçimi</label>
+                  <select id="time_frame" name="time_frame" class="form-control" required>
+                     <option value="1m">1 Dakika</option>
+                     <option value="5m">5 Dakika</option>
+                     <option value="15m">15 Dakika</option>
+                     <option value="1h">1 Saat</option>
+                     <option value="1d">1 Gün</option>
+                  </select>
+               </div>
+            </div>
+
+            <!-- Gönder Butonu -->
+            <div class="form-section text-center">
+               <button type="submit" class="submit-btn">Backtest Başlat</button>
+            </div>
+         </form>
+      </div>
+
+      <footer>
+         <div class="footer">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-12 text-center">
+                     <p>© 2024 Matiricie Tüm Hakları Saklıdır.</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+
+      <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+   </body>
+</html>
