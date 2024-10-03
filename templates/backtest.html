@@ -30,7 +30,7 @@
             border: 1px solid #ccc;
             padding: 10px;
          }
-         .submit-btn {
+         .submit-btn, .optimize-btn {
             background-color: #007bff;
             color: #fff;
             padding: 10px 20px;
@@ -38,8 +38,9 @@
             border-radius: 6px;
             cursor: pointer;
             transition: background-color 0.3s;
+            margin: 10px;
          }
-         .submit-btn:hover {
+         .submit-btn:hover, .optimize-btn:hover {
             background-color: #0056b3;
          }
          .form-section {
@@ -173,9 +174,10 @@
                </div>
             </div>
 
-            <!-- Gönder Butonu -->
+            <!-- Gönder Butonları -->
             <div class="form-section text-center">
-               <button type="submit" class="submit-btn">Backtest Başlat</button>
+               <button type="submit" class="submit-btn" name="backtest">Backtest Başlat</button>
+               <button type="submit" class="optimize-btn" name="optimize">Parametre Optimizasyonu Başlat</button>
             </div>
          </form>
 

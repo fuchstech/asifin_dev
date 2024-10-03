@@ -17,7 +17,7 @@ def hakkimizda():
 def hizmetler():
     return render_template('hizmetler.html')
 
-# Backtest sayfası
+# Backtest sayfası ve sonuç gösterimi
 @app.route('/backtest', methods=['GET', 'POST'])
 def backtest():
     if request.method == 'POST':
@@ -30,6 +30,15 @@ def backtest():
         strategy = request.form['strategy']
         time_frame = request.form['time_frame']
 
+        # Varsayılan bir result_message tanımlıyoruz
+        result_message = "İşlem yapıldı."
+
+        # Backtest başlat butonuna mı basıldı yoksa parametre optimizasyonu mu?
+        if 'backtest' in request.form:
+            result_message = "Backtest başarıyla başlatıldı!"
+        elif 'optimize' in request.form:
+            result_message = "Parametre optimizasyonu başlatıldı!"
+
         # İşlenmiş veriyi bir sözlükte tutalım
         result = {
             'max_transactions': max_transactions,
@@ -39,7 +48,8 @@ def backtest():
             'start_date': start_date,
             'end_date': end_date,
             'strategy': strategy,
-            'time_frame': time_frame
+            'time_frame': time_frame,
+            'message': result_message
         }
 
         # Formdan gelen verileri txt dosyasına yazalım
