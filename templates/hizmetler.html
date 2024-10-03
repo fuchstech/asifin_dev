@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="tr">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Hizmetlerimiz - AsiFin</title>
+      <meta name="keywords" content="Matiricie, finans, yapay zeka, yatırım, veri analizi">
+      <meta name="description" content="Matiricie - Finansal Dünyada Hizmetler. Yapay zeka destekli yatırım hizmetleri.">
+      <meta name="author" content="Matiricie">
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+      <link rel="icon" href="{{ url_for('static', filename='images/fevicon.png') }}" type="image/png" />
+      <style>
+         .service-card {
+            background-color: #0c0f38;
+            color: #b7b7b7;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 20px 50px rgba(0, 123, 255, 0.7);
+            margin-bottom: 30px;
+            transition: transform 0.3s;
+         }
+         .service-card:hover {
+            transform: scale(1.05);
+         }
+         .service-image {
+            border-radius: 10px;
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+         }
+         .service-card h2 {
+            color: #fdd430;
+         }
+         .service-text {
+            padding: 20px;
+         }
+      </style>
+   </head>
+   <body class="main-layout">
+      <header>
+         <div class="header">
+            <div class="container">
+               <div class="row">
+                  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 logo_section">
+                     <div class="full">
+                        <div class="center-desk">
+                           <div class="logo">
+                              <a href="index.html">
+                                 <img src="{{ url_for('static', filename='images/matiricie.png') }}" alt="Logo" style="max-width: 250px; max-height: 100px;" />
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                     <nav class="navigation navbar navbar-expand-md navbar-dark">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                           <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarsExample04">
+                           <ul class="navbar-nav mr-auto">
+                              <li class="nav-item"><a class="nav-link" href="index.html">Anasayfa</a></li>
+                              <li class="nav-item"><a class="nav-link" href="hakkimizda.html">Hakkımızda</a></li>
+                              <li class="nav-item active"><a class="nav-link" href="hizmetler.html">Hizmetler</a></li>
+                              <li class="nav-item"><a class="nav-link" href="index.html#contact">İletişim</a></li>
+                              <li class="nav-item"><a class="nav-link" href="signup.html">Kayıt Ol</a></li>
+                              <li class="nav-item"><a class="nav-link" href="login.html">Giriş Yap</a></li>
+                           </ul>
+                        </div>
+                     </nav>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </header>
+      <section class="services_section layout_padding" style="background-color: #0c0f38; color: #fff;">
+         <div class="container">
+            <div class="row justify-content-center">
+               <div class="col-md-10">
+                  <h2 class="text-center mb-5" style="color: #fff;">Hizmetlerimiz</h2>
+                  <div class="service-card">
+                     <div class="row">
+                        <div class="col-md-6">
+                           <img src="{{ url_for('static', filename='images/hizmet1.jpg') }}" alt="Yatırım Alışkanlıkları Analizi" class="service-image">
+                        </div>
+                        <div class="col-md-6">
+                           <div class="service-text">
+                              <h2>Yatırım Alışkanlıkları Analizi</h2>
+                              <p>Yatırım alışkanlıkları analizi hizmeti, bireylerin veya şirketlerin finansal davranışlarını ve yatırım tercihlerini inceleyen bir analiz hizmetidir. Bu analiz, mali durumu, risk toleransı, hedefleri ve mevcut yatırım portföyünü dikkate alır. Analiz sonuçları, daha bilinçli ve stratejik kararlar almanıza yardımcı olur.</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="service-card">
+                     <div class="row">
+                        <div class="col-md-6 order-md-2">
+                           <img src="{{ url_for('static', filename='images/hizmet2.jpg') }}" alt="Yapay Zeka Destekli Yatırım Önerileri" class="service-image">
+                        </div>
+                        <div class="col-md-6 order-md-1">
+                           <div class="service-text">
+                              <h2>Yapay Zeka Destekli Yatırım Önerileri</h2>
+                              <p>Yapay zeka destekli yatırım önerileri hizmeti, teknolojik algoritmalar ve veri analizi kullanarak yatırım stratejileri sunan bir hizmettir. Büyük veri setlerini analiz ederek piyasa trendlerini ve finansal göstergeleri değerlendirir. Yatırımcıların daha bilinçli kararlar almasına yardımcı olur.</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="service-card">
+                     <div class="row">
+                        <div class="col-md-6">
+                           <img src="{{ url_for('static', filename='images/hizmet3.jpeg') }}" alt="Özelleştirilebilir Yatırım Stratejileri" class="service-image">
+                        </div>
+                        <div class="col-md-6">
+                           <div class="service-text">
+                              <h2>Özelleştirilebilir Yatırım Stratejileri</h2>
+                              <p>Özelleştirilebilir Yatırım Stratejileri, bireylerin veya şirketlerin kendi hedeflerine göre yatırım stratejileri oluşturmasına olanak tanır. Kullanıcılar, kendi finansal durumlarını göz önünde bulundurarak yatırım planlarını belirleyebilir ve optimize edebilirler.</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="service-card">
+                     <div class="row">
+                        <div class="col-md-6 order-md-2">
+                           <img src="{{ url_for('static', filename='images/hizmet4.jpg') }}" alt="Ücretli Premium Özellikler" class="service-image">
+                        </div>
+                        <div class="col-md-6 order-md-1">
+                           <div class="service-text">
+                              <h2>Ücretli Premium Özellikler</h2>
+                              <p>Ücretli Premium Özellikler hizmeti, kullanıcıların daha fazla avantaj elde etmesine olanak sağlar. Bu avantajlar arasında gelişmiş analiz araçları, özel eğitimler ve kişiselleştirilmiş danışmanlık hizmetleri gibi özellikler bulunur. Premium özellikler, yatırımcılara daha fazla esneklik sunar.</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+
+               </div>
+            </div>
+         </div>
+      </section>
+      <footer>
+         <div class="footer">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-12 text-center">
+                     <p>© 2024 Matiricie Tüm Hakları Saklıdır.</p>
+                     <br>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+   </body>
+</html>

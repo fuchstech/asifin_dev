@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="tr">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Hakkımızda - AsiFin</title>
+      <meta name="keywords" content="Matiricie, finans, yapay zeka, yatırım, veri analizi">
+      <meta name="description" content="Matiricie - Finansal Dünyada Yenilikler. Yatırım süreçlerinizi daha bilinçli hale getiren dijital asistan.">
+      <meta name="author" content="Matiricie">
+      <!-- CSS Dosyaları -->
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+      <link rel="icon" href="{{ url_for('static', filename='images/fevicon.png') }}" type="image/png" />
+   </head>
+   <body class="main-layout">
+      <header>
+         <div class="header">
+            <div class="container">
+               <div class="row">
+                  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 logo_section">
+                     <div class="full">
+                        <div class="center-desk">
+                           <div class="logo">
+                              <a href="{{ url_for('index') }}">
+                                 <img src="{{ url_for('static', filename='images/matiricie.png') }}" alt="Logo" style="max-width: 250px; max-height: 100px;" />
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                     <nav class="navigation navbar navbar-expand-md navbar-dark">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                           <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarsExample04">
+                           <ul class="navbar-nav mr-auto">
+                              <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Anasayfa</a></li>
+                              <li class="nav-item active"><a class="nav-link" href="{{ url_for('hakkimizda') }}">Hakkımızda</a></li>
+                              <li class="nav-item"><a class="nav-link" href="{{ url_for('hizmetler') }}">Hizmetler</a></li>
+                              <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}#contact">İletişim</a></li>
+                              <li class="nav-item"><a class="nav-link" href="signup.html">Kayıt Ol</a></li>
+                              <li class="nav-item"><a class="nav-link" href="login.html">Giriş Yap</a></li>
+                           </ul>
+                        </div>
+                     </nav>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </header>
+      <section class="about_section layout_padding" style="background-color: #0c0f38; color: #fff;">
+         <div class="container">
+            <div class="row justify-content-center">
+               <div class="col-md-8">
+                  <div class="about_content p-4 rounded" style="background-color: #1f213a; color: #b7b7b738; border-style:solid; box-shadow: 0px 20px 50px rgba(0, 123, 255, 0.9) !important;">
+
+                     <h2 class="text-center mb-4" style="color: #fff;">Matiricie - AsiFin</h2>
+                     <p style="color: #b7b7b7; font-size: 18px; line-height: 1.6;">
+                        Matiricie, finans dünyasında yeni bir soluk getiren bir teknoloji şirketidir. Misyonumuz, kullanıcılarımıza dijital finans asistanı hizmetleri sunarak finansal hedeflerine ulaşmalarına yardımcı olmaktır.
+                     </p><br>
+                     <p style="color: #b7b7b7; font-size: 18px; line-height: 1.6;">
+                        Projemiz, kullanıcıların yatırım alışkanlıklarını ve yönelimlerini analiz eden bir test sunarak, yatırım süreçlerini daha etkili hale getiriyor. Ayrıca, kullanıcılarımıza kişiselleştirilmiş yatırım önerileri sunuyoruz ve risk analizi yaparak daha bilinçli yatırım kararları almalarını sağlıyoruz.
+                     </p><br>
+                     <p style="color: #b7b7b7; font-size: 18px; line-height: 1.6;">
+                        Matiricie olarak, yapay zeka ve veri analizi teknolojilerini kullanarak kullanıcılarımıza en iyi hizmeti sunmayı hedefliyoruz. Kullanıcılarımıza finansal bilinç kazandırmak ve yatırım dünyasında daha başarılı olmalarına yardımcı olmak için çalışıyoruz.
+                     </p><br>
+                     <p style="color: #b7b7b7; font-size: 18px; line-height: 1.6;">
+                        Ayrıca, kullanıcılarımıza kendi yatırım stratejilerini oluşturabilme olanağı sunuyoruz. Bu stratejilerin geriye dönük test edilmesine ve optimize edilmesine imkan veriyoruz. Kullanıcılar, kendi yatırım yolculuklarını şekillendirebilirler.
+                     </p><br>
+                     <p style="color: #b7b7b7; font-size: 18px; line-height: 1.6;">
+                        Matiricie, finans ve borsa eğitimleri ile kullanıcılarımızın finansal yeteneklerini geliştirmelerine yardımcı oluyor. Premium özellikler ile yatırımcılar daha fazla imkan ve hizmete erişebilirler.
+                     </p><br>
+                     <p style="color: #b7b7b7; font-size: 18px; line-height: 1.6;">
+                        Şirket olarak, amatör yatırımcılardan deneyimli yatırımcılara kadar tüm kullanıcılarımızın finans dünyasında daha bilinçli ve etkili hale gelmelerine katkıda bulunmak için buradayız. Matiricie olarak sizlere finansal başarı yolculuğunuzda eşlik etmekten mutluluk duyarız.
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <footer>
+         <div class="footer">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-12 text-center">
+                     <p>© 2024 Matiricie Tüm Hakları Saklıdır.</p>
+                     <br>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- JS Dosyaları -->
+      <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+   </body>
+</html>
