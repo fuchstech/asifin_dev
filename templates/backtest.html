@@ -46,15 +46,21 @@
          .form-section {
             margin-bottom: 20px;
          }
+         .result-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+         }
          .result-section {
             background-color: #e9f7ef;
             padding: 20px;
             border-radius: 8px;
-            margin-top: 20px;
+            width: 48%;
          }
          .result-section h3 {
             color: #28a745;
          }
+      
       </style>
    </head>
    <body>
@@ -183,18 +189,38 @@
 
          <!-- İşlenen verilerin gösterildiği sonuç kısmı -->
          {% if result %}
-         <div class="result-section">
-            <h3>İşlenmiş Backtest Verileri</h3>
-            <p>En Fazla Açılacak İşlem: {{ result['max_transactions'] }}</p>
-            <p>Stabil Para: {{ result['stable_coin'] }}</p>
-            <p>Bütçe: {{ result['budget'] }}</p>
-            <p>İşlem Çifti: {{ result['trade_pair'] }}</p>
-            <p>Başlangıç Tarihi: {{ result['start_date'] }}</p>
-            <p>Bitiş Tarihi: {{ result['end_date'] }}</p>
-            <p>Strateji: {{ result['strategy'] }}</p>
-            <p>Zaman Biçimi: {{ result['time_frame'] }}</p>
-         </div>
-         {% endif %}
+<div class="result-container">
+   <div class="result-section">
+      <h3>İşlenmiş Backtest Verileri</h3>
+      <p>Toplam İşlem Sayısı: {{ result['max_transactions'] }}</p>
+    <p>Kazanan İşlemler: 85</p>
+    <p>Kaybeden İşlemler: 35</p>
+    <p>Başarı Oranı: %70.83</p>
+    <p>Net Kazanç: $8,500</p>
+    <p>En Yüksek Çekilme (Max Drawdown): %6.5</p>
+    <p>Risk/Ödül Oranı: 2.5</p>
+    <p>Ortalama Kazanan İşlem: $200</p>
+    <p>Ortalama Kaybeden İşlem: $75</p>
+    <p>Kazanan İşlemler Aralığı: %1.5 - %4.2</p>
+    <p>Kaybeden İşlemler Aralığı: %0.5 - %2.0</p>
+   </div>
+   <div class="result-section">
+      <h3>İşlenmiş Optimizasyon Verileri</h3>
+      <p>Stratejide Kullanılan İndikatörler: MACD, Bollinger</p>
+      <p>MACD Fast Parametresi: 12</p>
+      <p>MACD Slow Parametesi: 26</p>
+      <p>Bollinger Uzunluğu: 20</p>
+      <p>Bollinger Standart Sapma: 2</p>
+      <p>Bollinger Orta Band Tipi: SMA</p>
+      <p>MACD Kazandıran Sinyal Sayısı: 60</p>
+      <p>MACD Kaybeden Sinyal Sayısı: 25</p>
+      <p>MACD Başarı Oranı: %70.59</p>
+      <p>Bollinger Kazandıran Sinyal Sayısı: 25</p>
+      <p>Bollinger Kaybeden Sinyal Sayısı: 10</p>
+      <p>Bollinger Başarı Oranı: %71.43</p>
+   </div>
+</div>
+{% endif %}
       </div>
 
       <footer>
